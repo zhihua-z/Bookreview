@@ -1,0 +1,12 @@
+<h1> Hi hi hi </h1>
+
+{% if latest_book_list %}
+    <ul>
+    {% for book in latest_book_list %}
+      <p>{{book}}</p>
+        <!--<li><a href="/polls/{{ book.id }}/">{{ book.question_text }}</a></li>-->
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No books are available.</p>
+{% endif %}
