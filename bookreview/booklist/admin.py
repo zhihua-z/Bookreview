@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from .models import Book, Comment
 
-class CommentInline(admin.StackedInline):
+class CommentInline(admin.TabularInline):
     model = Comment
 
 class BookAdmin(admin.ModelAdmin):

@@ -10,6 +10,10 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.publish_date <= now
 
 class Comment(models.Model):
     book = models.ForeignKey(Book, on_delete = models.CASCADE)
